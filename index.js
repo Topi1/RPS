@@ -51,7 +51,7 @@ function playRound(playerSelection)
 
     if (playerSelection === computerSelection)
     {
-         result = `Its a tie! You chose ${playerSelection}, and The Computer chose ${computerSelection}.`;
+         result = `Its a TIE! You chose ${playerSelection}, and The Computer chose ${computerSelection}.`;
          output.style.color = "blue";
     }
 
@@ -60,7 +60,7 @@ function playRound(playerSelection)
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock")
       ) {
-        result = `You won! You chose ${playerSelection}, and The Computer chose ${computerSelection}.`;
+        result = `You WON! You chose ${playerSelection}, and The Computer chose ${computerSelection}.`;
         output.style.color = "green";
         playerScore++;
         
@@ -71,7 +71,7 @@ function playRound(playerSelection)
         (computerSelection === "scissors" && playerSelection === "paper") ||
         (computerSelection === "paper" && playerSelection === "rock")
       ) {
-        result = `You lost! You chose ${playerSelection}, and The Computer chose ${computerSelection}.`;
+        result = `You LOST! You chose ${playerSelection}, and The Computer chose ${computerSelection}.`;
         output.style.color = "red";
         computerScore++;
         

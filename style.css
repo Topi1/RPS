@@ -1,0 +1,23 @@
+body {
+    background-color: #ca9898;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto', arial;
+}
+
+.buttons {
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    padding: 90px;
+}
+
+#scoreboard {
+    display: flex;
+    color: black;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 90px;
+}

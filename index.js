@@ -1,7 +1,18 @@
+
 let result = "";
 let playerScore = 0;
 let computerScore = 0;
+
 const buttons = document.querySelectorAll('input');
+
+const player = document.querySelector("#playerscore");
+player.textContent = `Player score: ${playerScore}`;
+
+const computer = document.querySelector("#computerscore");
+computer.textContent = `Computer score: ${computerScore}`;
+
+const output = document.querySelector("#results");
+output.textContent = "Get five points to win!";
 
 function getComputerChoice(min = 1, max = 4)
 {
@@ -40,7 +51,8 @@ function playRound(playerSelection)
 
     if (playerSelection === computerSelection)
     {
-        result = "tie";
+         result = `Its a tie! You chose ${playerSelection}, and The Computer chose ${computerSelection}.`;
+         output.style.color = "blue";
     }
 
     if (
@@ -48,8 +60,10 @@ function playRound(playerSelection)
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "rock")
       ) {
-        result = "win";
+        result = `You won! You chose ${playerSelection}, and The Computer chose ${computerSelection}.`;
+        output.style.color = "green";
         playerScore++;
+        
       }
 
     if (
@@ -57,22 +71,40 @@ function playRound(playerSelection)
         (computerSelection === "scissors" && playerSelection === "paper") ||
         (computerSelection === "paper" && playerSelection === "rock")
       ) {
-        result = "lose";
+        result = `You lost! You chose ${playerSelection}, and The Computer chose ${computerSelection}.`;
+        output.style.color = "red";
         computerScore++;
+        
       } 
       
+                if (playerScore == 5){
+                    result = "You Won the Game! Well played!";
+                    playerScore = 0;
+                    computerScore = 0;
+                    player.textContent = "Player Score: " + playerScore;
+                    computer.textContent = "Computer Score: " + computerScore;
+                }
+                else if (computerScore == 5){
+                    result = "You Lost the game. Better luck next time!"
+                    playerScore = 0;
+                    computerScore = 0;
+                    player.textContent = "Player Score: " + playerScore;
+                    computer.textContent = "Computer Score: " + computerScore;
+                }
+
     
-    
-    document.getElementById('scoreboard').innerHTML = result
-    document.getElementById('playerscore').innerHTML = playerScore
-    document.getElementById('computerscore').innerHTML = computerScore
+    //document.getElementById('scoreboard').textContent = result
+    //document.getElementById('playerscore').textContent = playerScore
+    //document.getElementById('computerscore').textContent = computerScore
+    //player.textContent = `Player score: ${playerScore}`;
+    player.textContent = "Player score: " + playerScore;
+    computer.textContent = "Computer score: " + computerScore;
+    output.textContent = result;
+
     return;
 }
 
-function gameEnd()
-{
 
-}
 
 
 
